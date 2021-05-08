@@ -4,17 +4,16 @@ package chap8;
 public class ReverseLinkedList {
 	
 	public ListNode reverseList(ListNode head) {
-		ListNode prev=null;
-		ListNode curr=head;
+		ListNode node=null;
 		
-		while(curr!=null) {
-			ListNode nextTemp=curr.next;
-			curr.next=prev;
-			prev=curr;
-			curr=nextTemp;
+		while(head!=null) {
+			ListNode tmp=head;
+			head=head.next;
+			tmp.next=node;
+			node=tmp;
 		}
 		
-        return prev;
+		return node;
     }
 
 }
